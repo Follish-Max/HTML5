@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表单新增属性</title>
+</head>
+<body>
+    <form action="" id="myForm">
+        <!-- placeholder:提示文本，提示占位 -->
+        <!-- autofocus：自动获取焦点 -->
+        <!-- autocomplete：自动完成，提交表单之后刷新保留上次的信息 on：打开 off：关闭 (默认为on)-->
+        <!-- 1.必须成功提交过的：提交过才会有记录 -->
+        <!-- 2.当前添加autocomplete的元素必须有name属性 -->
+        用户名：<input type="text" name="userName" placeholder="请输入用户名" autofocus autocomplete="on"><br>
+        <!-- tel并不会实现验证，仅仅是在移动端能够弹出数字键盘 -->
+        <!-- required:必须输入，如果没有输入则会阻止当前数据提交 -->
+        <!-- pattern:正则表达式验证
+        *：代表任意个
+        ？：代表0个或1个
+        +：代表一个或多个 -->
+        手机号：<input type="tel" name="userPhone" required pattern="^(\+86)?1\d{10}$"><br>
+        <!-- multiple:可以选择多个文件 -->
+        文件: <input type="file" name="photo" multiple><br>
+        <!-- email: 有默认验证，在email中，multiple允许输入多个邮箱地址，以逗号分隔 -->
+        邮箱: <input type="email" name="email" multiple><br>
+        <!-- 提交 -->
+        <input type="submit"><br>
+
+
+    </form>
+    <!-- 下面这个表单元素并没有包含在form中：默认情况下下面表单元素的数据不会进行提交 -->
+    <!-- form：指定表单的id，那么在将来指定id号的表单进行数据提交的时候，也会将当前表单元素的数据一起提交 -->
+    地址：<input type="text" name="address" form="myForm">
+
+    <form action="">
+        <!-- value：具体的值，lable：提示信息 -->
+        专业：<input type="text" list="subjects"><br>
+        <datalist id="subjects">
+            <option value="英语" label="学不会"></option>
+            <option value="高数" label="太难了"></option>
+            <option value="物理" label="还好"></option>
+        </datalist>
+        网址：<input type="url" list="urls">
+        <!-- 如果input输入框的type类型是url，那么value的值必须添加hppt：// -->
+        <datalist id="urls">
+            <option value="http://www.baidu.com" lable="百度" label="无所不能"></option>
+            <option value="http://www.cctv.com" lable="央视"></option>
+            <option value="http://www.github.com" lable="基佬交友平台"></option>
+        </datalist>
+    </form>
+
+    <!-- 新增表单元素：output -->
+    <!-- 显示输出信息：只能显示不能修改 -->
+    <output>总金额：￥100.00</output>
+</body>
+</html>
