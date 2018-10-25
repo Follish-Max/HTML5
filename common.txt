@@ -55,6 +55,9 @@
 	week:年周
 	<input type="week">
 
+9.表单新增时间:
+	oninput:用户输入内容时触发,可用于移动端输入字数统计
+	oninvalid:验证不能通过时触发
 
 
 	
